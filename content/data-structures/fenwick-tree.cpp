@@ -1,5 +1,5 @@
 /**
- * Opis: Drzewo Fenwicka, 
+ * Opis: Drzewo Fenwicka (Binary Indexed Tree), 
  *		 operacje w $O(\log N)$,
  *		 update w punkcie, zapytanie na przedziale
 */
