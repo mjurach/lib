@@ -6,8 +6,7 @@ help:
 	@echo "This makefile builds KACTL (KTH Algorithm Competition Template Library)"
 	@echo ""
 	@echo "Available commands are:"
-	@echo "	make fast		- to build KACTL, quickly (only runs LaTeX once)"
-	@echo "	make kactl		- to build KACTL"
+	@echo "	make pdf		- to build KACTL"
 	@echo "	make clean		- to clean up the build process"
 	@echo "	make veryclean		- to clean up and remove kactl.pdf"
 	@echo "	make test		- to run all the stress tests in stress-tests/"
@@ -16,11 +15,7 @@ help:
 	@echo ""
 	@echo "For more information see the file 'doc/README'"
 
-fast: | build
-	$(LATEXCMD) content/main.tex </dev/null
-	cp build/main.pdf main.pdf
-
-kactl: | build 
+pdf: | build 
 	$(LATEXCMD) content/main.tex && $(LATEXCMD) content/main.tex
 	cp build/main.pdf main.pdf
 
