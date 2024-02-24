@@ -16,13 +16,13 @@ It has been tested with the following versions:
 but should (could?) work with other versions too.
 
 **************************************************
-* Building the KACTL                             *
+* Building the KACTL                             
 **************************************************
 To build the KACTL should be a simple step. Just navigate to the root folder for this project and type 'make pdf' (and do your normal Voodoo dance that you do to get an accepted submission).
 
 
 **************************************************
-* Adding new chapters                            *
+* Adding new chapters                            
 **************************************************
 Create a folder for the chapter inside the 'content' folder. Then create (or copy) a chapter.tex file inside this new folder, which will be the main file for the chapter. You can then place source files in this folder and include them by modifying the chapter.tex file.
 Finally, you'll need to modify the file build/kactl.tex to add the new chapter folder. Notice that if you've followed the instructions above, all you need is to specify the name of the new chapter folder with the 'kactlchapter' command.
@@ -30,7 +30,7 @@ Ex. \kactlchapter{geometry} will include the file content/geometry/chapter.tex
 
 
 **************************************************
-* Adding new source files                        *
+* Adding new source files                        
 **************************************************
 First, locate the folder for the chapter where you want to add the new source file, or follow the instructions for creating a new chapter above. The chapter folder should be directly below the 'content' folder.
 The source files should be placed inside this chapter folder, and the file has to included by the 'chapter.tex' file in the same folder.
