@@ -1,5 +1,5 @@
 **************************************************
-* System requirements                            *
+* System requirements                            
 **************************************************
 The build process uses the following tools:
 	LaTeX (pdflatex together with some common packages such as 'listings')
