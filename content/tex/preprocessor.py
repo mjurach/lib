@@ -68,8 +68,8 @@ def find_start_comment(source, start=None):
     return first
 
 def processwithcomments(caption, instream, outstream, listingslang):
-    knowncommands = ['Author', 'Date', 'Description', 'Source', 'Time', 'Memory', 'License', 'Status', 'Usage', 'Details']
-    requiredcommands = []
+    knowncommands = ['Opis']
+    requiredcommands = ['Opis']
     includelist = []
     error = ""
     warning = ""
@@ -161,14 +161,8 @@ def processwithcomments(caption, instream, outstream, listingslang):
         out.append(r"\kactlerror{%s: %s}" % (caption, error))
     else:
         addref(caption, outstream)
-        if commands.get("Description"):
-            out.append(r"\defdescription{%s}" % escape(commands["Description"]))
-        if commands.get("Usage"):
-            out.append(r"\defusage{%s}" % codeescape(commands["Usage"]))
-        if commands.get("Time"):
-            out.append(r"\deftime{%s}" % ordoescape(commands["Time"]))
-        if commands.get("Memory"):
-            out.append(r"\defmemory{%s}" % ordoescape(commands["Memory"]))
+        if commands.get("Opis"):
+            out.append(r"\defdescription{%s}" % escape(commands["Opis"]))
         if includelist:
             out.append(r"\leftcaption{%s}" % pathescape(", ".join(includelist)))
         if nsource:

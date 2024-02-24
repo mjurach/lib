@@ -1,4 +1,6 @@
 /**
+ * Opis: Wavelet Tree,
+ * 		operacje w $O(\log \textrm{ALPH})$
  */
 
 struct wavelet_tree {
