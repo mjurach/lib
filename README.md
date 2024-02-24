@@ -25,7 +25,7 @@ To build the KACTL should be a simple step. Just navigate to the root folder for
 * Adding new chapters                            
 **************************************************
 Create a folder for the chapter inside the 'content' folder. Then create (or copy) a chapter.tex file inside this new folder, which will be the main file for the chapter. You can then place source files in this folder and include them by modifying the chapter.tex file.
-Finally, you'll need to modify the file build/kactl.tex to add the new chapter folder. Notice that if you've followed the instructions above, all you need is to specify the name of the new chapter folder with the 'kactlchapter' command.
+Finally, you'll need to modify the file content/main.tex to add the new chapter folder. Notice that if you've followed the instructions above, all you need is to specify the name of the new chapter folder with the 'kactlchapter' command.
 Ex. \kactlchapter{geometry} will include the file content/geometry/chapter.tex
 
 
