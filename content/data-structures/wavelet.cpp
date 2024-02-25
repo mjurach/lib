@@ -1,8 +1,10 @@
 /**
- * Opis: $O(\log \textrm{ALPH})$, constructor przyjmuje ciąg na którym rozpinamy drzewo,
+ * Opis: $O(\log^2 \textrm{ALPH})$, constructor przyjmuje ciąg na którym rozpinamy drzewo,
  * $\textrm{rank(l, r, k)}$ zwraca $k$-tą najmniejszą liczbę na przedziale $[l ; r]$.
+ * (\textbf{Uwaga!}) Stała pamięciowa jest dosyć duża (około 262 Mb, dla $N, Q \leq 2\cdot 10^5$).
  */
 
+//funkcja cnt jest w O(\log) co daje cale operacje w O(\log^2), da sie cnt w czasie stalym -- do dopisania
 struct wavelet_tree {
 	const static int ALPH = (1<<18)-1;
 	struct Node {
