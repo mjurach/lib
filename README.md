@@ -1,5 +1,5 @@
 **************************************************
-* Credits: https://github.com/kth-competitive-programming/kactl                            
+* Credits for make: https://github.com/kth-competitive-programming/kactl                            
 **************************************************
 
 **************************************************
