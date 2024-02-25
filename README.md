@@ -1,4 +1,8 @@
 **************************************************
+* Credits: https://github.com/kth-competitive-programming/kactl                            
+**************************************************
+
+**************************************************
 * System requirements                            
 **************************************************
 The build process uses the following tools:
