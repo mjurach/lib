@@ -20,7 +20,7 @@ Kompilacja komendą 'make pdf' w folderze głównym.
 * Dodawanie nowych rozdziałów 
 **************************************************
 Trzeba stworzyć folder w folderze 'content'. W nim stworzyć plik chapter.tex, który będzie plikiem tego rozdziału. W nim umieszczamy pliki z kodami.
-Trzeba potem zmodyfikować plik content/main.tex, przez dodanie nowego rozdziału. Rozdział dodajem komendą '\kactlchapter', podając nazwe folderu.
+Trzeba potem zmodyfikować plik content/main.tex, przez dodanie nowego rozdziału. Rozdział dodajemy komendą '\kactlchapter', podając nazwe folderu.
 Np. \kactlchapter{geometry} dodaje plik content/geometry/chapter.tex
 
 
