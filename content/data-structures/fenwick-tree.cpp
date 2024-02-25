@@ -1,7 +1,6 @@
 /**
- * Opis: Drzewo Fenwicka (Binary Indexed Tree), 
- *		 operacje w $O(\log N)$,
- *		 update w punkcie, zapytanie na przedziale
+ * Opis: (Binary Indexed Tree) $O(\log N)$, indeksowane od $0$.
+ *		 Update w punkcie, zapytanie na przedziale
 */
 
 struct BIT { 
@@ -36,4 +35,3 @@ struct BIT {
 		return pos;
 	}
 };
-

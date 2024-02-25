@@ -163,10 +163,10 @@ def processwithcomments(caption, instream, outstream, listingslang):
         addref(caption, outstream)
         if commands.get("Opis"):
             out.append(r"\defdescription{%s}" % escape(commands["Opis"]))
-        if includelist:
-            out.append(r"\leftcaption{%s}" % pathescape(", ".join(includelist)))
-        if nsource:
-            out.append(r"\rightcaption{%s%d lines}" % (hsh, len(nsource.split("\n"))))
+#        if includelist:
+#            out.append(r"\leftcaption{%s}" % pathescape(", ".join(includelist)))
+#       if nsource:
+#	            out.append(r"\rightcaption{%s%d lines}" % (hsh, len(nsource.split("\n"))))
         langstr = ", language="+listingslang
         out.append(r"\begin{lstlisting}[caption={%s}%s]" % (pathescape(caption), langstr))
         out.append(nsource)

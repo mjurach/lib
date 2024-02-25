@@ -1,6 +1,6 @@
 /**
- * Opis: Wavelet Tree,
- * 		operacje w $O(\log \textrm{ALPH})$
+ * Opis: $O(\log \textrm{ALPH})$, constructor przyjmuje ciąg na którym rozpinamy drzewo,
+ * $\textrm{rank(l, r, k)}$ zwraca $k$-tą najmniejszą liczbę na przedziale $[l ; r]$.
  */
 
 struct wavelet_tree {
