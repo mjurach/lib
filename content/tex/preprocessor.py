@@ -67,6 +67,30 @@ def find_start_comment(source, start=None):
 
     return first
 
+def get_hash(txt):
+    p = subprocess.Popen(['sh', 'content/tex/%.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    hsh, _ = p.communicate(txt)
+    return hsh.split(None, 1)[0]
+
+def hash_fragments_or_whole(txt):
+    txt = txt.split('\n')
+
+    def hash_fragment(l, r):
+        assert txt[l] == '// BEGIN HASH'
+        assert txt[r].endswith('// END HASH')
+        hsh = get_hash('\n'.join(txt[l + 1 : r + 1]))
+        txt[l] += ' ' + hsh
+
+    for r in range(len(txt)):
+        if txt[r].endswith('// END HASH'):
+            for l in range(r - 1, -1, -1):
+                if txt[l] == '// BEGIN HASH':
+                    hash_fragment(l, r)
+                    break
+    txt = '\n'.join(txt)
+
+    return get_hash(txt), txt
+
 def processwithcomments(caption, instream, outstream, listingslang):
     knowncommands = ['Opis']
     requiredcommands = ['Opis']
@@ -145,6 +169,8 @@ def processwithcomments(caption, instream, outstream, listingslang):
         nsource = nsource.rstrip() + source[end:]
     nsource = nsource.strip()
 
+#	hsh, nsource = hash_fragments_or_whole(nsource)
+
     if listingslang in ['C++', 'Java']:
         hash_script = 'hash'
         p = subprocess.Popen(['sh', 'content/tex/%s.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding="utf-8")
@@ -153,6 +179,7 @@ def processwithcomments(caption, instream, outstream, listingslang):
         hsh = hsh + ', '
     else:
         hsh = ''
+
     # Produce output
     out = []
     if warning:
