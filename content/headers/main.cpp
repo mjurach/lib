@@ -1,7 +1,3 @@
-/**
- * Opis: makra i debugi
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 #ifdef DEBUG
