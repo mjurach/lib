@@ -10,9 +10,6 @@ auto operator<<(auto &o, auto x)->decltype(x.end(), o) {o<<"{"; for(auto e : x) 
 #endif
 #define ll long long
 #define all(v) (v).begin(), (v).end()
-#define FOR(i,l,r) for(int i=(l);i<=(r);++i)
-#define ROF(i,r,l) for(int i=(r);i>=(l);--i)
-#define REP(i,n) FOR(i,0,(n)-1)
 #define ssize(x) int(x.size())
 #define fi first
 #define se second
