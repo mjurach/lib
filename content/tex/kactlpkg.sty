@@ -267,7 +267,7 @@
 	\setboolean{hasleftcaption}{false}
 	\myneedspace{3\baselineskip}
 	\penalty-100
-	{\large #2}
+	{\Large \bfseries #2}
 	\immediate\write18{rm -f \@builddir/main.tmp} % Don't include old kactl.tmp on failure.
 	\immediate\write18{python3 content/tex/preprocessor.py -i "\@kactldir/#2" -o \@builddir/main.tmp #1}
 	\immediate\input{\@builddir/main.tmp}
