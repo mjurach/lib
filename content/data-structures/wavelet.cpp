@@ -1,7 +1,7 @@
 /**
- * Opis: $O(\log^2 \textrm{ALPH})$, constructor przyjmuje ciąg na którym rozpinamy drzewo,
- * $\textrm{rank(l, r, k)}$ zwraca $k$-tą najmniejszą liczbę na przedziale $[l ; r]$.
- * (\textbf{Uwaga!}) Stała pamięciowa jest dosyć duża (około 262 Mb, dla $N, Q \leq 2\cdot 10^5$).
+ * Opis: $O(\log^2 \textrm{ALPH})$ czasowo, $O(n \log \textrm{ALPH})$ pamięciowo. Constructor przyjmuje ciąg na którym rozpinamy drzewo,
+ * $\texttt{rank(l, r, k)}$ zwraca $k$-tą najmniejszą liczbę na przedziale $[l ; r]$.
+ * (\textbf{Uwaga!}) pamięć około 262 Mb, dla $N, Q \leq 2\cdot 10^5$.
  */
 
 //funkcja cnt jest w O(\log) co daje cale operacje w O(\log^2), da sie cnt w czasie stalym -- do dopisania
