@@ -1,6 +1,6 @@
 /**
  * Opis: Dodatek do generowania testów, lub innego losowania.
- *		 Ziarno można zmieniać np. rng.seed(atoi(argv[1]));
+ *		 Ziarno można zmieniać np. \texttt{rng.seed(atoi(argv[1]));}
  */
 
 mt19937 rng(random_device{}());
