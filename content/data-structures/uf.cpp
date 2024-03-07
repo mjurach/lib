@@ -8,10 +8,7 @@ struct UF {
 	vector<int> e;
 	UF(int n):e(n, -1) {}
 
-	int get(int a) {
-		while(e[a] >= 0) a = e[a];
-		return a;
-	}
+	int get(int a) {return e[a] < 0 ? a : e[a] = get(e[a]);}
 
 	void unionn(int a, int b) {
 		a = get(a); b = get(b);
