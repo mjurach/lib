@@ -1,6 +1,6 @@
 /**
  *	Opis: Trzeba wywołać \texttt{flush$\textunderscore$out()} żeby wszystko wypisać. \\
- *  	  \textbf{czas:} ok. $1,47$s na time, $1955$ms na oiejq.
+ *  	  \textbf{czas:} ok. $0,47$s na time, $1955$ms na oiejq.
  */
 
 #include <unistd.h>
