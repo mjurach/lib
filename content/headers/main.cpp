@@ -8,7 +8,7 @@ auto operator<<(auto &o, auto x)->decltype(x.end(), o) {o<<"{"; for(auto e : x) 
 #define cerr if(0)cout
 #define debug(X) ;
 #endif
-#define ll long long
+using ll = long long;
 #define all(v) (v).begin(), (v).end()
 #define ssize(x) int(x.size())
 #define fi first
