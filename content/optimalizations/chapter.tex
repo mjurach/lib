@@ -1,7 +1,5 @@
 \chapter {Optymalizacje}
 
-{\Large \textbf{dodać flushowanie bufora  i zmienić nazwy buf (buf-in, buf-out)}}
-
 \section{FastOut}
 Jest kilka opcji. Różnią się
 długością (i złożonością kodu), bądź używaniem funkcji \texttt{write()}
@@ -26,8 +24,6 @@ z biblioteki \texttt{unistd.h} (gdyby był z nią problem to można użyć opcji
 Do każdego kodu dopisany jest przykładowy czas (wczytanie $2 \cdot 10^7$ liczb).
 Rozmiary bufora zależą od rozmiaru wejścia (raczej mniejszy niż w poniższych kodach).
 Rozmiar powinien uwzględnić każdą cyfrę i spację.
-Jeżeli wejście jest za duże, to bufor może być mniejszy, a kod podzielony na kilka części 
-oddzielonych flushowaniem (ważne by kod podzielić, \textbf{nie dodawać ifa w środku żadnej funkcji}, bo będzie wolno).
 
 \kactlimport{fastin.cpp}
 \kactlimport{no-buf-in.cpp}

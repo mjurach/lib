@@ -1,10 +1,12 @@
 /**
- *	Opis: \textbf{czas:} ok. $0,067$s na time, $195$ms na oiejq.
+ *	Opis: Trzeba wywołać \texttt{flush$\textunderscore$out()} żeby wszystko wypisać. \\
+ *   	  \textbf{czas:} ok. $0,067$s na time, $195$ms na oiejq.
  */
 
 #include <unistd.h>
 
-char buf[200 * 1'024 * 1'024 + 100'000*sizeof(unsigned long)];
+const int BUF_SIZE = 1'000'100 * 22;
+char buf[BUF_SIZE];
 char *buf_ptr = buf;
 
 void write_char(char c) {
@@ -102,7 +104,7 @@ void write_int(unsigned long x) {
 	}
 }
 
-void write_all() {
-	//wypisuje wszystko, mozna wkleic na koniec maina
+void flush_out() {
 	write(STDOUT_FILENO, buf, buf_ptr-buf);
+	buf_ptr = buf;
 }

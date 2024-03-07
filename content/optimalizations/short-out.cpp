@@ -1,5 +1,6 @@
 /**
- *	Opis: \textbf{czas:} ok. $1,47$s na time, $1955$ms na oiejq.
+ *	Opis: Trzeba wywołać \texttt{flush$\textunderscore$out()} żeby wszystko wypisać. \\
+ *  	  \textbf{czas:} ok. $1,47$s na time, $1955$ms na oiejq.
  */
 
 #include <unistd.h>
@@ -30,7 +31,7 @@ void write_int(unsigned long x) {
 	write_char('\n');
 }
 
-void write_all() {
-	//wypisuje wszystko, mozna wkleic na koniec maina
+void flush() {
 	write(STDOUT_FILENO, buf, buf_ptr-buf);
+	buf_ptr = buf;
 }
