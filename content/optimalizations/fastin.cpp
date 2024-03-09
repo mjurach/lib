@@ -13,9 +13,15 @@ bool is_digit(char c) {
 	return c >= '0';
 }
 
+bool is_space(char c) {
+	return c == ' ';
+}
+
 int fastin(){
 	int x = 0;
 	char c;
+	while (is_space(c = buf[pos++])) ;
+	pos--;
 	while (is_digit(c = buf_in[pos++])) {
 		x = x * 10 + c - '0';
 	}

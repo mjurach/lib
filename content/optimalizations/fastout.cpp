@@ -9,10 +9,6 @@ const int BUF_SIZE = 1'000'100 * 22;
 char buf[BUF_SIZE];
 char *buf_ptr = buf;
 
-void write_char(char c) {
-	*buf_ptr++ = c;
-}
-
 constexpr unsigned long 
 build_long(char c1, char c2, char c3, char c4, char c5, char c6, char c7, char c8) {
 	unsigned long n = c8;
