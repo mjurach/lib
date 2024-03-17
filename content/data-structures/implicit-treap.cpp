@@ -42,14 +42,12 @@ namespace Treap {
 		push_lazy(a);
 		push_lazy(b);
 		if(a->rank < b->rank) {
-			pNode t = merge(a->right, b);
-			a->right = t;
+			a->right = merge(a->right, b);
 			upd(a);
 			return a;
 		}
 		else {
-			pNode t = merge(a, b->left);
-			b->left = t;
+			b->left = merge(a, b->left);
 			upd(b);
 			return b;
 		}
