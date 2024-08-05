@@ -1,21 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#ifdef DEBUG
-auto&operator<<(auto &o, pair<auto, auto> p) {o << "(" << p.first << ", " << p.second << ")"; return o;}
-auto operator<<(auto &o, auto x)->decltype(x.end(), o) {o<<"{"; for(auto e : x) o<<e<<", "; return o<<"}";}
-#define debug(X) cerr << "["#X"]: " << X << '\n';
-#else 
-#define cerr if(0)cout
-#define debug(X) ;
-#endif
-using ll = long long;
-#define all(v) (v).begin(), (v).end()
-#define ssize(x) int(x.size())
-#define fi first
-#define se second
-#define mp make_pair
-#define eb emplace_back
-
 const int mod = 998244353;
 
 int add(int a, int b) {
@@ -170,30 +152,4 @@ vi div(vector<vi> b, vector<vi> a, int n, int m) {
 		q.resize((n+1)/2);
 		return div(q, v, (n+1)/2, 2*m);
 	}
-}
-
-int main() {
-	ios_base::sync_with_stdio(false); cin.tie(nullptr);
-
-	int n, k;
-	cin >> n >> k;
-	vector<int> a(n+1);
-	for (int i = 1; i <= n; ++i) {cin >> a[i]; a[i] %= mod;}
-
-	vector<vi> w {
-		n+1,
-		vi(2)
-	};
-	vector<vi> jed = w;
-	jed[0][0] = 1;
-
-	w[0][0] = 1;
-	for (int i = 1; i <= n; ++i) w[i][1] = sub(0, a[i]);
-	debug(w);
-	vector<int> wyn = div(jed, w, n+1, 2);
-	for (int i = 1; i <= k; ++i) {
-		cout << (i >= ssize(w) ? 0 : wyn[i]) << ' ';
-	}
-
-	return 0;
 }
