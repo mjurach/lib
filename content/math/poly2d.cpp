@@ -1,5 +1,5 @@
 /**
- * Opis: Operacje na wielmianach $\mod 998244353$.
+ * Opis: Operacje na wielmianach dwóch zmiennych $\mod 998244353$.
  * 		 Mnożenie w $O(mn \log(m+n))$.
  * 		 Dzielenie zwraca vector współczynników przy $x^{n-1}$, w czasie $O(mn \log^2(n+m))$.
 */
