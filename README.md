@@ -29,5 +29,3 @@ Np. \kactlchapter{geometry} dodaje plik content/geometry/chapter.tex
 **************************************************
 Tworzymy plik w folderze odpowiedniego rozdziału, a potem w odpowiednim pliku 'chapter.tex' dodajemy ten plik.
 Np. \kactlimport{example.cpp} dodaje plik example.cpp.
-
-Należy pamiętać o odpowiednim opisaniu pliku przed dołączeniem go!
