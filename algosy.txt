@@ -1,5 +1,32 @@
 ADAM:
+-lis
+-MO
+-centroid
+-merge sort tree
+-trwale struktury danych
+-Bellmand-Ford, Floyd-Warshall
+-kolejka minimow
+-sparse table
+-sos dp
+-flow
+-offline incremental scc
 
 KAROL:
+-SCC
+-KMP
+-drzewo dfs, mosty, pkt artykulacji
+-CHT dla niemonotonicznych (na secie)
+-2-sat
 
 JURI:
+-ext euklides
+-geo
+-CHT
+-HLD
+-pref-pref
+-tablica sufiksowa (skopiowac)
+-drzewo fenwicka 2D i range update
+-aliens trick
+-fft
+-flow with demands
+-xor basis
