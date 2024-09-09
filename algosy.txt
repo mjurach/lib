@@ -17,6 +17,7 @@ KAROL:
 -drzewo dfs, mosty, pkt artykulacji
 -CHT dla niemonotonicznych (na secie)
 -2-sat
+-pbds
 
 JURI:
 -ext euklides
@@ -30,3 +31,4 @@ JURI:
 -fft
 -flow with demands
 -xor basis
+-crt
