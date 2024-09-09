@@ -33,3 +33,5 @@ int fpow(int a, int b) {
 int inv(int x) {
 	return fpow(x, mod-2);
 }
+
+
