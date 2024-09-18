@@ -11,7 +11,7 @@ const int inf = 1e9+10;
 //	int query(int l, int r) {}
 //};
 
-struct HLD { //zmien wartosc w wierzcholku, podaj max na sciezce
+struct HLD {
 	int n;
 	vector<vector<int>> g;
 	segtree t;
