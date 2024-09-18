@@ -22,7 +22,6 @@ KAROL:
 JURI:
 -geo
 -CHT
--HLD
 -pref-pref
 -tablica sufiksowa (skopiowac)
 -drzewo fenwicka 2D i range update
