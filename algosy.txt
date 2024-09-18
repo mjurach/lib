@@ -26,7 +26,6 @@ JURI:
 -tablica sufiksowa (skopiowac)
 -drzewo fenwicka 2D i range update
 -aliens trick
--fft
 -flow with demands
 -xor basis
 -crt
