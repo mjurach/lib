@@ -71,3 +71,25 @@ vi exp(const vi &p, int n) { //ADD, LOG
 	q.resize(n);
 	return q;
 }
+
+vi powi(vi p, int k, int n) { //LOG, EXP
+	p = mod_xn(p, n);
+	int cnt = 0;
+	while(cnt < ssize(p) and !p[cnt])
+		++cnt;
+	if(ll(cnt) * k >= n)
+		return {};
+	p.erase(p.begin(), p.begin() + cnt);
+	if(p.empty())
+		return k ? vi{} : vi{1};
+	int powi0 = fpow(p[0], k);
+	int inv0 = inv(p[0]);
+	for (int &x : p) x = mul(x, inv0);
+	p = log(p, n - cnt * k);	
+	for (int &x : p) x = mul(x, k);
+	p = exp(p, n - cnt * k);
+	for (int &x : p) x = mul(x, powi0);
+	vi t(cnt * k, 0);
+	p.insert(p.begin(), t.begin(), t.end());
+	return p;
+}
