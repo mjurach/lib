@@ -61,3 +61,16 @@ struct HLD {
 	void update(int v, int x) {
 		t.update(pre[v], x);	
 	}
+
+	int query(int a, int b) {
+		int res = -inf;
+		while (path[a] != path[b]) {
+			if (d[path[a]] < d[path[b]]) swap(a, b);
+			res = max(res, t.query(pre[path[a]], pre[a]));
+			a = parent[path[a]];
+		}
+		if (d[a] < d[b]) swap(a, b);
+		res = max(res, t.query(pre[b], pre[a]));
+		return res;
+	}
+};
