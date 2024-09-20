@@ -22,7 +22,6 @@ KAROL:
 JURI:
 -geo
 -CHT
--tablica sufiksowa (skopiowac)
 -drzewo fenwicka 2D i range update
 -aliens trick
 -flow with demands
