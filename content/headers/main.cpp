@@ -2,7 +2,7 @@
 using namespace std;
 #ifdef DEBUG
 auto&operator<<(auto &o, pair<auto, auto> p) {o << "(" << p.first << ", " << p.second << ")"; return o;}
-auto&operator<<(auto &o, auto x) {o<<"{"; for(auto e : x) o<<e<<", "; return o<<"}";}
+auto operator<<(auto&o,auto x)->decltype(x.end(),o){o<<"{"; for(auto e : x) o<<e<<", "; return o<<"}";}
 #define debug(X) cerr << "["#X"]: " << X << '\n';
 #else 
 #define cerr if(0)cout
