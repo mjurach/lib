@@ -13,13 +13,18 @@ Niech $F(x) = \sum_{n=0}^{\infty} f_n x^n$, wtedy
 \[\gcd(f_n, f_m) = f_{\gcd(n, m)}. \]
 
 \section{Liczby Catalana}
+\[C_n = \frac{1}{n+1} \binom{2n}{n} \]
+
+\[C_n = C_0 C_{n-1} + C_1 C_{n-2} + \ldots + C_{n-2} C_1 + C_{n-1} C_0 \]
+
+\[C_{n+1} = \frac{2\left(2n +1 \right)}{n+2}C_n \]
 
 \section{Funkcje tworzące}
 
-%fib
-%catalan
-%1/(1-ax)
-%1/(1-x)^k
-%e^x
-%-ln(1-x)
-%\prod (1-x^n)
+\[ \frac{1}{1-ax} = \sum a^n x^n \]
+\[F(x) = \frac{x}{1 - x - x^2} \]
+\[ C(x) = \frac{1 - \sqrt{1-4x}}{2x} \]
+\[ \exp(x) = \sum_{n \geq 0} \frac{x^n}{n!} \]
+\[ -\ln(1-x) = \sum_{n \geq 1} \frac{x^n}{n} \]
+\[ \frac{1}{(1-x)^k} = \sum_{n \geq 0} \binom{n+k-1}{n} x^n \]
+\[ \prod_{n \geq 1} (1 - x^n) = 1 + \sum_{k \geq 1} (-1)^k \left( x^{\frac{k(3k+1)}{2}} + x ^{\frac{k(3k-1)}{2}} \right) \]
