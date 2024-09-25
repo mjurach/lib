@@ -1,5 +1,5 @@
 /**
- * Opis: Mnożenie wielomianów $\mod 998244353$. Złożoność $O(\log n)$.
+ * Opis: $O(n \log n)$. Mnożenie wielomianów $\mod 998244353$.
 */
 
 #include "mod.cpp" //keep-include
