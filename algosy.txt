@@ -20,6 +20,7 @@ KAROL:
 -pbds
 
 JURI:
+-wzorki
 -geo
 -CHT
 -drzewo fenwicka 2D i range update
