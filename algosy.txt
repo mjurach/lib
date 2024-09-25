@@ -28,3 +28,4 @@ JURI:
 -flow with demands
 -xor basis
 -crt
+-sqrt wielomianu
