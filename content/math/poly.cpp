@@ -39,6 +39,7 @@ vi integr(vi p) {
 }
 
 vi inv(vi p, int n) {
+	assert(ssize(p) && p[0] != 0);
 	if (n == 1)
 		return {inv(p[0])};
 	p.resize(n);
@@ -92,4 +93,9 @@ vi powi(vi p, int k, int n) { //LOG, EXP
 	vi t(cnt * k, 0);
 	p.insert(p.begin(), t.begin(), t.end());
 	return p;
+}
+
+vi sqrt(const vi &p, int n) { //POW
+	assert(ssize(p) && p[0] == 1);
+	return powi(p, inv(2), n);
 }
