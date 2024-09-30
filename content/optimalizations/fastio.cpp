@@ -9,11 +9,15 @@ bool is_digit(char c) {
 
 int fastin(){
 	int x = 0;
+	int s = 1;
 	char c;
-	while (is_digit(c = getchar_unlocked())) {
+	c = getchar();
+	if (c == '-') s = -1;
+	else x = c - '0';
+	while (is_digit(c = getchar())) {
 		x = x * 10 + c - '0';
 	}
-	return x;
+	return s*x;
 }
 
 void write_int(unsigned long x) {
