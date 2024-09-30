@@ -55,7 +55,6 @@ struct HLD {
 			path[u] = u;
 			make_hld(u, v);
 		}
-		//post[v] = timer++;
 	}
 
 	void update(int v, int x) {
