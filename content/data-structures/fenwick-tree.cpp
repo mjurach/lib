@@ -11,10 +11,6 @@ struct BIT {
 		N = n;
 		tree.resize(N);
 	}
-	void resize(int n) {
-		N = n;
-		tree.resize(N);
-	}
 	void update(int p, int x) {
 		for (++p; p <= N; p += (p&-p)) tree[p-1] += x;
 	}
