@@ -6,7 +6,7 @@
 struct BIT { 
 	vector<int> tree;
 	int N;
-	BIT() {N = 0};
+	BIT() {N = 0;}
 	BIT(int n) {
 		N = n;
 		tree.resize(N);
