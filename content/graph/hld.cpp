@@ -1,5 +1,5 @@
 /**
- *	Opis: $O(n)$ preprocessing, update i query w $O(\log n)$. Update to zmiana wartosci w wierzcholku, query to max na sciezce.
+ *	Opis: $O(n)$ preprocessing, update i query w $O(\log^2 n)$. Update to zmiana wartosci w wierzcholku, query to max na sciezce.
  *		  Drzewo przedziałowe do dopisania tak jak w komentarzu.
  */
 
