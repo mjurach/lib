@@ -20,7 +20,6 @@ KAROL:
 
 JURI:
 -wzorki
--geo
 -CHT
 -aliens trick
 -flow with demands
