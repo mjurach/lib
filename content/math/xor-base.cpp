@@ -1,5 +1,5 @@
 /**
- * Opis: $(nB)$ gdzie $B$ to liczba bitów. Zwraca minimalny zbiór $b$ taki że każdy element z $x$ można
+ * Opis: $O(nB)$ gdzie $B$ to liczba bitów. Zwraca minimalny zbiór $b$ taki że każdy element z $x$ można
  *		zapisać jako xor pewnych elementów $b$.
  */
 
