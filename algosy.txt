@@ -20,8 +20,4 @@ KAROL:
 
 JURI:
 -wzorki
--CHT
 -aliens trick
--flow with demands
--xor basis
--crt
