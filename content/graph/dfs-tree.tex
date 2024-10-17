@@ -1,6 +1,11 @@
 \section{Drzewo DFS}
 
-Mamy drzewo dfs z obliczoną funkcją $\mathbf{low}$ i czasami wejścia w tablicy $\mathbf{pre}$.
+Mamy drzewo dfs z obliczonymi czasami wejścia w tablicy $\mathbf{pre}$ i funkcją
+\[\mathbf{low}[v] = \min \begin{cases} 
+	\mathbf{pre}[v], \\
+	\mathbf{pre}[u] & \text{dla krawędzi niedrzewowych } (u, v), \\
+	\mathbf{low}[u] & \text{dla krawędzi drzewowych } (u, v).
+\end{cases}\]
 
 Wierzchołek $v$ jest punktem artykulacji jeżeli
 \[\mathbf{low}[u] \geq \mathbf{pre}[v]\]
