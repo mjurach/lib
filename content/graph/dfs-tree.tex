@@ -1,0 +1,10 @@
+\section{Drzewo DFS}
+
+Mamy drzewo dfs z obliczoną funkcją $\mathbf{low}$ i czasami wejścia w tablicy $\mathbf{pre}$.
+
+Wierzchołek $v$ jest punktem artykulacji jeżeli
+\[\mathbf{low}[u] \geq \mathbf{pre}[v]\]
+dla dowolnego $u$ będącego synem $v$ w drzewie dfs.
+
+Krawędź $(v, u)$ ($v$ jest ojcem $u$) jest mostem, jeżeli jest krawędzią drzewową i 
+\[ \mathbf{low}[u] > \mathbf{pre}[v].\]
