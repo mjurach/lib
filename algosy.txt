@@ -12,9 +12,7 @@ ADAM:
 -offline incremental scc
 
 KAROL:
--SCC
 -KMP
--drzewo dfs, mosty, pkt artykulacji
 -CHT dla niemonotonicznych (na secie)
 -2-sat
 
