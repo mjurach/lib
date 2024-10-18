@@ -2,35 +2,36 @@
  * Opis: fastio.
 */
 
-
-bool is_digit(char c) {
-	return c >= '0';
+inline void SuckInt(int *n){
+	register char c=0;
+	register int r=1;
+	(*n)=0;
+	while (c<33) c=getc_unlocked(stdin);
+	if (c==45)
+		r=-1, c=getc_unlocked(stdin);
+	while (c>32)
+		(*n)=(*n)*10+c-48, c=getc_unlocked(stdin);
+	(*n)*=r;
 }
-
-int fastin(){
-	int x = 0;
-	int s = 1;
-	char c;
-	c = getchar();
-	if (c == '-') s = -1;
-	else x = c - '0';
-	while (is_digit(c = getchar())) {
-		x = x * 10 + c - '0';
-	}
-	return s*x;
+inline void SuckLong(long long *n){
+	register char c=0;
+	register int r=1;
+	(*n)=0;
+	while (c<33) c=getc_unlocked(stdin);
+	if (c==45)
+		r=-1, c=getc_unlocked(stdin);
+	while (c>32)
+		(*n)=(*n)*10+c-48, c=getc_unlocked(stdin);
+	(*n)*=r;
 }
-
-void write_int(unsigned long x) {
-	char t[19];
-	int i = 0;
-	do {
-		int d = x%10;
-		t[i++] = '0'+d;
-		x /= 10;
-	} while (x > 0) ;
-
-	while (--i >= 0) {
-		putchar_unlocked(t[i]);
-	}
-	putchar_unlocked('\n');
+inline void ThrowSlow(string s){
+	for (auto i: s)
+		putc_unlocked(i, stdout);
+}
+inline void Throw(int n, bool f=true){
+	if (n<0 && f) putc_unlocked('-', stdout), n*=-1;
+	if (n==0 && f) putc_unlocked('0', stdout);
+	if (n==0) return;
+	Throw(n/10, 0);
+	putc_unlocked(n%10+'0', stdout);
 }
