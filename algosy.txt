@@ -4,7 +4,6 @@ ADAM:
 -Bellmand-Ford, Floyd-Warshall
 -kolejka minimow
 -sparse table
--sos dp
 -flow
 
 KAROL:
