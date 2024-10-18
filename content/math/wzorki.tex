@@ -66,3 +66,15 @@ Można w takim razie użyć divide and conquer do przyspieszenia.
 
 \[ \left | A_1 \cup A_2 \cup \dots \cup A_n\right | = 
 \sum_{i_1, i_2, \dots, i_k} (-1)^{k} \left | A_{i_1} \cap A_{i_2} \dots A_{i_k} \right | \] 
+
+\section{Funkcje arytmetyczne}
+\[\varphi(ab) = \varphi(a) \cdot \varphi(b) \cdot \frac{d}{\varphi(d)},\]
+gdzie $d = \gcd(a, b)$.
+Jeżeli $n = p_1^{\alpha_1} p_2^{\alpha_2} \dots p_k^{\alpha_k}$, to
+\[\varphi(n) = n \cdot \left( 1 - \frac{1}{p_1}\right) \cdot \left( 1 - \frac{1}{p_2}\right) \dots \left( 1 - \frac{1}{p_k}\right).\]
+
+\[ \varphi(n) = \sum_{d \mid n} \varphi(d)\]
+
+Niech $\phi(n) = \sum_{i=1}^n \varphi(i)$, wtedy
+\[ \phi(n) = \frac{n(n+1)}{2} - \sum_{i=2}^n \phi \left( \left\lfloor \frac{n}{i}\right \rfloor \right)\]
+
