@@ -1,5 +1,4 @@
 ADAM:
--lis
 -MO
 -centroid
 -merge sort tree
