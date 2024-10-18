@@ -9,7 +9,6 @@ ADAM:
 -sparse table
 -sos dp
 -flow
--offline incremental scc
 
 KAROL:
 -KMP
