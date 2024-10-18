@@ -5,7 +5,6 @@ ADAM:
 -sparse table
 
 KAROL:
--CHT dla niemonotonicznych (na secie)
 -2-sat
 
 JURI:
