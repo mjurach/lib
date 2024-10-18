@@ -1,7 +1,6 @@
 ADAM:
 -centroid
 -trwale struktury danych
--Bellmand-Ford, Floyd-Warshall
 -kolejka minimow
 -sparse table
 -flow
