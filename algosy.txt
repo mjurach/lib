@@ -3,7 +3,6 @@ ADAM:
 -trwale struktury danych
 -kolejka minimow
 -sparse table
--flow
 
 KAROL:
 -KMP
