@@ -52,3 +52,12 @@ R_{\frac{\pi}{4}}\left( \begin{bmatrix} x \\ y \end{bmatrix}\right) =
 		x - y
 	\end{bmatrix}.
 \]
+
+\section{Divide and Conquer DP}
+Jeżeli
+\[ dp(i, j) = \min_{0 \leq k \leq j} dp(i-1, k-1) + C(k, j),\]
+oraz 
+\[C(a, c) + C(b, d) \leq C(a, d) + C(b, c),\]
+dla $a \leq b \leq c \leq d$, to $opt(i, j) \leq opt(i, j+1)$, 
+gdzie $opt(i, j)$ to indeks $k$ minimalizujący powyższy wzór.
+Można w takim razie użyć divide and conquer do przyspieszenia.
