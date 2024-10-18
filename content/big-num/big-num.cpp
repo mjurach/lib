@@ -342,7 +342,6 @@ struct bigint {
 	}
  
 	typedef vector<long long> vll;
- 
 	static vll karatsubaMultiply(const vll &a, const vll &b) {
 		int n = a.size();
 		vll res(n + n);
@@ -352,27 +351,22 @@ struct bigint {
 					res[i + j] += a[i] * b[j];
 			return res;
 		}
- 
 		int k = n >> 1;
 		vll a1(a.begin(), a.begin() + k);
 		vll a2(a.begin() + k, a.end());
 		vll b1(b.begin(), b.begin() + k);
 		vll b2(b.begin() + k, b.end());
- 
 		vll a1b1 = karatsubaMultiply(a1, b1);
 		vll a2b2 = karatsubaMultiply(a2, b2);
- 
 		for (int i = 0; i < k; i++)
 			a2[i] += a1[i];
 		for (int i = 0; i < k; i++)
 			b2[i] += b1[i];
- 
 		vll r = karatsubaMultiply(a2, b2);
 		for (int i = 0; i < (int) a1b1.size(); i++)
 			r[i] -= a1b1[i];
 		for (int i = 0; i < (int) a2b2.size(); i++)
 			r[i] -= a2b2[i];
- 
 		for (int i = 0; i < (int) r.size(); i++)
 			res[i + k] += r[i];
 		for (int i = 0; i < (int) a1b1.size(); i++)
@@ -381,7 +375,6 @@ struct bigint {
 			res[i + n] += a2b2[i];
 		return res;
 	}
- 
 	bigint operator*(const bigint &v) const {
 		vector<int> a6 = convert_base(this->a, base_digits, 6);
 		vector<int> b6 = convert_base(v.a, base_digits, 6);
