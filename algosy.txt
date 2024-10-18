@@ -1,5 +1,4 @@
 ADAM:
--MO
 -centroid
 -merge sort tree
 -trwale struktury danych
