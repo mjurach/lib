@@ -61,3 +61,8 @@ oraz
 dla $a \leq b \leq c \leq d$, to $opt(i, j) \leq opt(i, j+1)$, 
 gdzie $opt(i, j)$ to indeks $k$ minimalizujący powyższy wzór.
 Można w takim razie użyć divide and conquer do przyspieszenia.
+
+\section{Zasada włączeń i wyłączeń}
+
+\[ \left | A_1 \cup A_2 \cup \dots \cup A_n\right | = 
+\sum_{i_1, i_2, \dots, i_k} (-1)^{k} \left | A_{i_1} \cap A_{i_2} \dots A_{i_k} \right | \] 
