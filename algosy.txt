@@ -1,6 +1,5 @@
 ADAM:
 -centroid
--merge sort tree
 -trwale struktury danych
 -Bellmand-Ford, Floyd-Warshall
 -kolejka minimow
