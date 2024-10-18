@@ -1,0 +1,11 @@
+\section{Floyd-Warshall}
+
+$O(n^3)$. Oblicza odległość między każdą parą wierzchołków w skierowanym grafie ważonym (dopuszczalne wagi ujemne).
+
+\begin{verbatim}
+Dla k = 0 do n – 1
+    Dla i = 0 do n – 1
+        Dla j = 0 do n – 1
+            Odleglosc[i, j] = min(Odleglosc[i, j], 
+					Odleglosc[i, k] + Odleglosc[k, j])
+\end{verbatim}
