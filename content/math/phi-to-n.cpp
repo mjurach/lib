@@ -1,5 +1,5 @@
 /**
- * 	Opis: Liczy $\phi(a)$ dla każdego $a \leq n$ w $O(n \log \log n)$.
+ * 	Opis: Liczy $\varphi(a)$ dla każdego $a \leq n$ w $O(n \log \log n)$.
  */
 
 void phi_1_to_n(int n) {
