@@ -1,5 +1,5 @@
 /**
- *	Opis: $O(n \log n)$. Sort do MO. Sortuje przedzialy $[a.x, a.y]$.
+ *	Opis: $O(1)$. Sort do MO. Sortuje przedzialy $[a.x, a.y]$.
  */
 
 const int k = 500;

@@ -2,8 +2,9 @@
  * 	Opis: $O(l \cdot 2^l)$. Zwraca $\mathbf{sos}[mask]$ równe sumie $\mathbf{s}[m]$ po podzbiorach $mask$.
  */
 
-vector<int> SOS(int l, vector<int>& s)
+vector<int> SOS(vector<int>& s)
 {
+	int l = ssize(s);
 	vector<int> sos(1<<l);
 	for(int mask = 0;mask<(1<<l);mask++)
 		sos[mask] = s[mask];
