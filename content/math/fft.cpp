@@ -35,7 +35,7 @@ void fft(vector<cd> &a, int n, bool invert = false) {
 		for (cd &x : a) x /= n;
 }
 
-vector<ld> conv(vector<ld> a, vector<ld> b) {
+vector<int> conv(vector<int> a, vector<int> b) {
 	if (a.empty() || b.empty()) return {};
 
 	vector<cd> fa(all(a)), fb(all(b));
@@ -47,7 +47,7 @@ vector<ld> conv(vector<ld> a, vector<ld> b) {
 	for (int i = 0; i < sz; ++i) fa[i] *= fb[i];
 	fft(fa, sz, true);
 
-	vector<ld> result(n);
+	vector<int> result(n);
 	for (int i = 0; i < n; ++i) 
 		result[i] = round(fa[i].real());
 	return result;
