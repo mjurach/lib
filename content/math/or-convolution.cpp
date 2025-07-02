@@ -2,10 +2,14 @@
  * 		Opis: $O(n \log n)$. Oblicza tablicę $c_k = \sum_{i \mid j = k} a_i \cdot b_j$.
  */
 
-void sos(vector<int> &s, bool inverse = false) {
+void sos(vector<ll> &s, bool inverse = false) {
 	int n = ssize(s);
-	int l = 1;
-	while (2*l <= n) l *= 2;
+	int l = 0;
+	int pot = 1;
+	while (2*pot <= n) {
+		pot *= 2;
+		l++;
+	}
 	for(int i=0;i<l;i++)
 		for(int mask=0;mask<n;mask++)
 			if((mask & (1<<i)) != 0)
