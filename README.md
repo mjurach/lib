@@ -3,29 +3,25 @@
 **************************************************
 
 **************************************************
-* Wymagania                            
+* Requirements                            
 **************************************************
-Narzędzia potrzebne do kompilacji:
-	LaTeX (pdflatex)
+Tools required for compilation:
+	LateX (pdflatex)
 	Python
 	make
 
 **************************************************
-* Kompilacja 
+* Compilation 
 **************************************************
-Kompilacja komendą 'make pdf' w folderze głównym.
+Compilation using 'make pdf' in the main folder.
 
 
 **************************************************
-* Dodawanie nowych rozdziałów 
+* Adding new chapters
 **************************************************
-Trzeba stworzyć folder w folderze 'content'. W nim stworzyć plik chapter.tex, który będzie plikiem tego rozdziału. W nim umieszczamy pliki z kodami.
-Trzeba potem zmodyfikować plik content/main.tex, przez dodanie nowego rozdziału. Rozdział dodajemy komendą '\kactlchapter', podając nazwe folderu.
-Np. \kactlchapter{geometry} dodaje plik content/geometry/chapter.tex
-
+Add a new folder in the 'content' directory. In this folder add 'chapter.tex'. Modify 'content/main.tex'.
 
 **************************************************
-* Dodawanie nowych plików z kodami 
+* Adding new code files
 **************************************************
-Tworzymy plik w folderze odpowiedniego rozdziału, a potem w odpowiednim pliku 'chapter.tex' dodajemy ten plik.
-Np. \kactlimport{example.cpp} dodaje plik example.cpp.
+Add the .cpp file to the coresponding directory and modify 'chatper.tex'.
