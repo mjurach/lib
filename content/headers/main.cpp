@@ -1,9 +1,9 @@
 #include "bits/stdc++.h"
 using namespace std;
 #ifdef DEBUG
-auto&operator<<(auto &o, pair<auto, auto> p) {o << "(" << p.first << ", " << p.second << ")"; return o;}
-auto operator<<(auto&o,auto x)->decltype(x.end(),o){o<<"{"; for(auto e : x) o<<e<<", "; return o<<"}";}
-#define debug(X) cerr << "["#X"]: " << X << '\n';
+auto&operator<<(auto& o, pair<auto, auto> p){return o<<"{"<<p.first<<", "<<p.second<<"}";}
+auto operator<<(auto& o, auto x)->decltype(x.end(), o){o<<"{"; for(auto& v : x) o<<v<<", "; return o<<"}";}
+#define debug(X...) cerr<<"["#X"]: ", [](auto...$){((cerr<<$<<"; "),...)<<endl;}(X)
 #else 
 #define cerr if(0)cout
 #define debug(X) ;
