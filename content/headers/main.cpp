@@ -6,7 +6,7 @@ auto operator<<(auto& o, auto x)->decltype(x.end(), o){o<<"{"; for(auto& v : x) 
 #define debug(X...) cerr<<"["#X"]: ", [](auto...$){((cerr<<$<<"; "),...)<<endl;}(X)
 #else 
 #define cerr if(0)cout
-#define debug(X) ;
+#define debug(X...) ;
 #endif
 using ll = long long;
 #define all(v) (v).begin(), (v).end()
