@@ -7,5 +7,9 @@ nc() {
 	g++ -std=c++20 -DLOCAL -O3 -static $1.cpp -o $1
 }
 
+# Hash code copied from the notebook with: h<file.cpp
+h(){ cpp -dD -P -fpreprocessed|tr -d '[:space:]'|md5sum|cut -c-6;}
+# Self-check: echo 'int x;'|h  -> 3ecdec
+
 alias cp='cp -i'
 alias mv='mv -i'

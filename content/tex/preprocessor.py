@@ -1,4 +1,4 @@
-#'!/usr/bin/env python3
+#!/usr/bin/env python3
 # encoding: utf-8
 
 # Source code preprocessor for KACTL build process.
@@ -68,25 +68,40 @@ def find_start_comment(source, start=None):
     return first
 
 def get_hash(txt):
-    p = subprocess.Popen(['sh', 'content/tex/%.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    hsh, _ = p.communicate(txt)
-    return hsh.split(None, 1)[0]
+    result = subprocess.run(
+        ['sh', 'content/tex/hash.sh'],
+        input=txt,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or 'hash command failed')
+
+    hsh = result.stdout.strip()
+    if len(hsh) != 6 or any(c not in '0123456789abcdef' for c in hsh):
+        raise RuntimeError('invalid hash output: %r' % hsh)
+    return hsh
 
 def hash_fragments_or_whole(txt):
     txt = txt.split('\n')
+    begin = None
+    for i, line in enumerate(txt):
+        if line == '// BEGIN HASH':
+            if begin is not None:
+                raise ValueError('nested BEGIN HASH marker')
+            begin = i
+        elif line.endswith('// END HASH'):
+            if begin is None:
+                raise ValueError('END HASH marker without BEGIN HASH')
+            if i == begin + 1:
+                raise ValueError('empty hash fragment')
+            hsh = get_hash('\n'.join(txt[begin + 1 : i + 1]))
+            txt[begin] += ' ' + hsh
+            begin = None
 
-    def hash_fragment(l, r):
-        assert txt[l] == '// BEGIN HASH'
-        assert txt[r].endswith('// END HASH')
-        hsh = get_hash('\n'.join(txt[l + 1 : r + 1]))
-        txt[l] += ' ' + hsh
-
-    for r in range(len(txt)):
-        if txt[r].endswith('// END HASH'):
-            for l in range(r - 1, -1, -1):
-                if txt[l] == '// BEGIN HASH':
-                    hash_fragment(l, r)
-                    break
+    if begin is not None:
+        raise ValueError('BEGIN HASH marker without END HASH')
     txt = '\n'.join(txt)
 
     return get_hash(txt), txt
@@ -169,16 +184,12 @@ def processwithcomments(caption, instream, outstream, listingslang):
         nsource = nsource.rstrip() + source[end:]
     nsource = nsource.strip()
 
-#	hsh, nsource = hash_fragments_or_whole(nsource)
-
-    if listingslang in ['C++', 'Java', 'sh']:
-        hash_script = 'hash'
-        p = subprocess.Popen(['sh', 'content/tex/%s.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding="utf-8")
-        hsh, _ = p.communicate(nsource)
-        hsh = hsh.split(None, 1)[0]
-        hsh = hsh + ', '
-    else:
-        hsh = ''
+    hsh = ''
+    if not error and listingslang == 'C++':
+        try:
+            hsh, nsource = hash_fragments_or_whole(nsource)
+        except (OSError, RuntimeError, ValueError) as err:
+            error = 'Could not hash source: %s' % err
 
     # Produce output
     out = []
@@ -192,8 +203,8 @@ def processwithcomments(caption, instream, outstream, listingslang):
             out.append(r"\defdescription{%s}" % escape(commands["Opis"]))
 #        if includelist:
 #            out.append(r"\leftcaption{%s}" % pathescape(", ".join(includelist)))
-#       if nsource:
-#	            out.append(r"\rightcaption{%s%d lines}" % (hsh, len(nsource.split("\n"))))
+        if hsh:
+            out.append(r"\rightcaption{\texttt{\#%s}}" % hsh)
         langstr = ", language="+listingslang
         out.append(r"\begin{lstlisting}[caption={%s}%s]" % (pathescape(caption), langstr))
         out.append(nsource)
@@ -202,16 +213,19 @@ def processwithcomments(caption, instream, outstream, listingslang):
     for line in out:
         print(line, file=outstream)
 
-def processraw(caption, instream, outstream, listingslang = 'raw'):
+def processraw(caption, instream, outstream, listingslang = 'raw', should_hash = False):
     try:
         source = instream.read().strip()
         addref(caption, outstream)
-        print(r"\rightcaption{%d lines}" % len(source.split("\n")), file=outstream)
+        if should_hash:
+            print(r"\rightcaption{\texttt{\#%s}}" % get_hash(source), file=outstream)
+        else:
+            print(r"\rightcaption{%d lines}" % len(source.split("\n")), file=outstream)
         print(r"\begin{lstlisting}[language=%s,caption={%s}]" % (listingslang, pathescape(caption)), file=outstream)
         print(source, file=outstream)
         print(r"\end{lstlisting}", file=outstream)
     except:
-        print("\kactlerror{Could not read source.}", file=outstream)
+        print(r"\kactlerror{Could not read source.}", file=outstream)
 
 def parse_include(line):
     line = line.strip()
@@ -298,7 +312,7 @@ def main():
         elif language == "raw":
             processraw(caption, instream, outstream)
         elif language == "rawcpp":
-            processraw(caption, instream, outstream, 'C++')
+            processraw(caption, instream, outstream, 'C++', True)
         elif language == "sh":
             processraw(caption, instream, outstream, 'bash')
         elif language == "py":
