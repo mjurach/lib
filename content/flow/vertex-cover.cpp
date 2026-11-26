@@ -15,6 +15,7 @@ void alt_paths(int v, vector<bool> &s, const vector<int> &mt, const vector<vecto
 }
 
 vector<bool> vertex_cover(const vector<vector<int>> &g, const vector<bool> &col) {
+	int n = ssize(g);
 	vector<int> mt = matching(g, col);
 
 	vector<bool> s(n);

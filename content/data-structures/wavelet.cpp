@@ -37,7 +37,7 @@ struct wavelet_tree {
 	Node *root;
 	wavelet_tree(const vector<int> &b) {
 		vector<int> idx;
-		REP(i, ssize(b)) idx.eb(i);
+		for (int i = 0; i < ssize(b); ++i) idx.eb(i);
 		root = new Node(idx, b);
 	};
 

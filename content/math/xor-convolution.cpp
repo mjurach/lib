@@ -16,7 +16,8 @@ void transform(vector<int> &a, bool inverse = false) {
 }
 
 vector<int> xor_convolution(vector<int> a, vector<int> b) {
-	int sz = max(ssize(a), ssize(b));
+	int sz = 1;
+	while (sz < max(ssize(a), ssize(b))) sz *= 2;
 	a.resize(sz); b.resize(sz);
 	vector<int> c(sz);
 
@@ -24,7 +25,7 @@ vector<int> xor_convolution(vector<int> a, vector<int> b) {
 	for (int i = 0; i < sz; ++i) c[i] = mul(a[i], b[i]); 
 	transform(c, true);
 
-	int mrev = inverse(m);
+	int mrev = inv(m);
 	for (int &x : c)
 		x = mul(x, mrev);
 

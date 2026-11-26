@@ -3,7 +3,7 @@
  *			  skierowanym grafie ważonym (dopuszczalne wagi ujemne).
  */
 
-vector<vector<int>> floyd-warshall(const vector<vector<pair<int, int>>> &g) {
+vector<vector<int>> floyd_warshall(const vector<vector<pair<int, int>>> &g) {
 
 	int n = ssize(g);
 	const int INF = 1e9 + 10;

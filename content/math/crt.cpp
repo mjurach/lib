@@ -3,6 +3,8 @@
  *		 Mogą nie być względnie pierwsze ale wtedy assert wywali.
  */
 
+#include "ext-euclid.cpp" //keep-include
+
 
 ll crt(ll a, ll m, ll b, ll n) {
 	if(n > m) swap(a, b), swap(m, n);

@@ -4,7 +4,7 @@
 
 #include "or_convolution.cpp" //keep-include
 
-vector<int> and_convolution(vector<int> a, vector<int> b) {
+vector<ll> and_convolution(vector<ll> a, vector<ll> b) {
 	int n = max(ssize(a), ssize(b));
 	int sz = 1;
 	while (sz < n) sz *= 2;
@@ -15,7 +15,7 @@ vector<int> and_convolution(vector<int> a, vector<int> b) {
 		swap(b[i], b[(sz-1)^i]);
 	}
 
-	vector<int> c = or_convolution(a, b);
+	vector<ll> c = or_convolution(a, b);
 
 	for (int i = 0; i < sz/2; ++i) {
 		swap(c[i], c[(sz-1)^i]);

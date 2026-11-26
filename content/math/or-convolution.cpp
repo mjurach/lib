@@ -10,19 +10,21 @@ void sos(vector<ll> &s, bool inverse = false) {
 		pot *= 2;
 		l++;
 	}
+
 	for(int i=0;i<l;i++)
 		for(int mask=0;mask<n;mask++)
 			if((mask & (1<<i)) != 0)
 				s[mask] += (inverse ? -s[mask^(1<<i)] : s[mask^(1<<i)]);
 }
 
-vector<int> or_convolution(vector<int> a, vector<int> b) {
-	int sz = max(ssize(a), ssize(b));
+vector<ll> or_convolution(vector<ll> a, vector<ll> b) {
+	int sz = 1;
+	while (sz < max(ssize(a), ssize(b))) sz *= 2;
 	a.resize(sz); b.resize(sz);
-	vector<int> c(sz);
+	vector<ll> c(sz);
 
 	sos(a); sos(b);
-	for (int i = 0; i < sz; ++i) c[i] = a[i] * b[i];
+	for (int i = 0; i < sz; ++i) c[i] = ll(a[i]) * b[i];
 	sos(c, true);
 
 	return c;
